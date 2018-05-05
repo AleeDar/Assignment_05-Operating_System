@@ -48,11 +48,15 @@ for k in range(no_of_processes):
     Ready_Queue[k].append(exe_time)
     if (CPU_idle_time != 0):
         print("CPU remains idle for"),(CPU_idle_time),("time units")
+    CPU_idle_time = 0
     print("Process"),(Ready_Queue[k][0]),("started execution at time:"),(Ready_Queue[k][3]),(" and terminated at time:"),(exe_time)
     # Waiting Time Of Process In FCFS --> Ready_Queue[k][5]
     Ready_Queue[k].append(Ready_Queue[k][3] - Ready_Queue[k][1])
     # Turnaround Time Of Process in FCFS --> Ready_Queue[k][6]
     Ready_Queue[k].append(Ready_Queue[k][4] - Ready_Queue[k][1])
+
+for m in range(no_of_processes):
+    print "\t\t\t",str(Ready_Queue[m][3])+"..."+str(Ready_Queue[m][0])+"..."+str(Ready_Queue[m][4])
 
 print("\npName\tA.T\tB.T\tS.T\tF.T\tW.T\tT.T")
 for k in range(no_of_processes):
